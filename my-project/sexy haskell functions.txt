@@ -1,0 +1,4 @@
+1. stack test - builds then runs it to see that it doesn't crash. 
+2. stack exec "name" - small note, exec will be projectName-exe
+3. stack new xxx - helps do some additionally setup and packages to make things smooth
+4. stack --resolver - switch resolver, can be better for different features of dif resolvers
