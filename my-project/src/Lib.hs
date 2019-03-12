@@ -2,5 +2,7 @@ module Lib
     ( someFunc
     ) where
 
+message :: Bool
+message = (\x -> True)False
 someFunc :: IO ()
-someFunc = putStrLn "something other than \"Hello World \""
+someFunc = print message
