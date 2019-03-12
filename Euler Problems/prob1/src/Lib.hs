@@ -10,9 +10,10 @@ modoOfThree :: Integer -> Integer
 modoOfThree x = x `mod` 3
 decrement:: Integer -> Integer
 decrement x = x - 1
--- someFunc :: Integer -> IO()
--- someFunc x = print x
-final:: Integer -> Integer
-final x = if (modoOfFive x) == 0 && (modoOfThree x) == 0
-    then print x
-    else print 1
+final:: Integer -> IO ()
+final x =
+  if (modoOfFive x) == 0 || (modoOfThree x) == 0 then print x
+  else print 1
+
+someFunc :: IO ()
+someFunc = final 5
