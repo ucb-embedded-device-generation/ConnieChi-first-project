@@ -12,8 +12,24 @@ decrement:: Integer -> Integer
 decrement x = x - 1
 final:: Integer -> IO ()
 final x =
-  if (modoOfFive x) == 0 || (modoOfThree x) == 0 then print x
-  else print 1
-
+  if x == 0
+    then do
+      print 0
+  else if (modoOfFive x) == 0 || (modoOfThree x) == 0
+    then do
+      print x
+      final (decrement x)
+  else do
+    final (decrement x)
+finalAddition :: Integer -> Integer
+finalAddition x =
+  if x == 0
+    then do
+      0
+  else if (modoOfFive x) == 0 || (modoOfThree x) == 0
+    then do
+      x + finalAddition (decrement x)
+  else do
+    finalAddition (decrement x)
 someFunc :: IO ()
-someFunc = final 5
+someFunc = print (finalAddition 10000)
