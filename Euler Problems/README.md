@@ -1,1 +1,1 @@
-The files are in Lib.hs, Didn't use Main.hs, woopsies
+The files are in Lib.hs under src, Didn't use Main.hs in app, woopsies
