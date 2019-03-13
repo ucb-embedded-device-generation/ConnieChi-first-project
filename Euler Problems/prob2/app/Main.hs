@@ -9,6 +9,10 @@ import Lib
 -- fib x = fib(x - 1) + fib(x - 2)
 
 --lazy fibs, dunno how this works
+-- first list is (1, 2, 3, 5, 8, ...)
+-- tail is simply without the first item.
+-- thus, we add the two and get the fib nums
+-- we miss 1, but it doesn't matter because we only look at evens
 fib = 1 : 2 : zipWith (+) fib (tail fib)
 --Difference between integer and int?
 ifNotEven :: Int -> Int
